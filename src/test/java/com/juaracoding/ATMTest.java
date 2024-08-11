@@ -30,11 +30,13 @@ public class ATMTest {
         Assert.assertEquals(atm.lihatSaldo(), 1000, "Saldo setelah tarik uang harus 2300");
     }
 
+    //Menguji apakah metode tarikUang() melempar pengecualian ketika jumlah yang ditarik melebihi saldo saat ini.
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testTarikUangLebihDariSaldo() {
         atm.tarikUang(2000);
     }
 
+    //Menguji apakah metode tarikUang() melempar pengecualian ketika jumlah yang negatif ditarik.
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testTarikUangNegatif() {
         atm.tarikUang(-200);
